@@ -1,0 +1,11 @@
+class Pangram
+
+  ALPHA = ('a'..'z')
+
+  def self.is_pangram?(str)
+    str.downcase!
+    ALPHA.all? { |letter|  str.include?(letter) }
+  end
+
+end
+pana=Pangram.is_pangram?("A quick brown fox jumps over the lazy dog")
