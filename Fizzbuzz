@@ -1,0 +1,31 @@
+myHash=Hash.new
+for i in 1..100
+  myHash[i] = i
+end
+for i in 1..100
+    if myHash[i]%3==0
+        myHash[i]="FiZZ"
+    end 
+    if myHash[i]%5==0
+        myHash[i]="Buzz"
+    end   
+    if (myHash[i] % 3 == 0 && myHash[i] % 5 == 0) 
+        myHash[i]="FizzBuzz"
+    end    
+    
+end   myHash=Hash.new
+for i in 1..100
+  myHash[i] = i
+end
+for i in 1..100
+    if myHash[i]%3==0
+        myHash[i]="FiZZ"
+    end 
+    if myHash[i]%5==0
+        myHash[i]="Buzz"
+    end   
+    if (myHash[i] % 3 == 0 && myHash[i] % 5 == 0) 
+        myHash[i]="FizzBuzz"
+    end    
+    
+end   
