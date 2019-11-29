@@ -1,0 +1,29 @@
+class Node
+  def initialize(data)
+    @data = data
+    
+  end
+end
+
+class LinkedList
+    def initialize(data)
+        @head=nil
+    end
+  def traverse
+      temp=[]
+     current_node = @head
+     while current_node.next_node != nil
+      temp<<current_node
+  end
+  end
+
+  def push(node)
+      new_head = Node.new value, @head
+    @head = new_head
+  end
+  
+
+  def pop
+      @head = @head.next_node
+  end
+end
