@@ -1,0 +1,22 @@
+require 'geocoder'
+module Geocoder::Calculations
+ def distance_between(lat1, lon1, lat2, lon2, options = {})
+
+  # set default options
+  options[:units] ||= :mi
+
+  # convert degrees to radians
+  lat1, lon1, lat2, lon2 = to_radians(lat1, lon1, lat2, lon2)
+
+  # compute deltas
+  dlat = lat2 - lat1
+  dlon = lon2 - lon1
+
+  a = (Math.sin(dlat / 2))**2 + Math.cos(lat1) *
+      (Math.sin(dlon / 2))**2 * Math.cos(lat2)
+  c = 2 * Math.atan2( Math.sqrt(a), Math.sqrt(1-a))
+  c * earth_radius(options[:units])
+end
+
+end
+Geocoder::Calculations.distance_between(47.858205,2.294359 ,40.748433,-73.985655)
